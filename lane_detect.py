@@ -25,7 +25,7 @@ def color_filter(image):
     masked = cv2.bitwise_and(image, image, mask = mask)
     return masked
 
-def drow_the_lines(img, lines):
+def draw_the_lines(img, lines):
     img = np.copy(img)
     blank_image = np.zeros((img.shape[0], img.shape[1], 3), dtype=np.uint8)
 
@@ -62,7 +62,7 @@ while True:
                                 lines=np.array([]),
                                 minLineLength=20,
                                 maxLineGap=80)
-        image_with_lines = drow_the_lines(image, lines)
+        image_with_lines = draw_the_lines(image, lines)
     except:
         pass
     cv2.imshow("color_filter", masked)
