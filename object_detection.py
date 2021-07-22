@@ -64,12 +64,12 @@ def draw_bounding_boxes(image, boxes, confidences, classIDs, idxs, colors):
 ########################CONFIDENCE and THRESHOLD ################################################
 confidence = 0.6
 threshold = 0.3
-#################################################################################################
+############################################################################################################
 CFG = ("/home/skuba/image_processing_workshop/yolo-coco/yolov4-tiny.cfg")    
 WEIGHT = ("/home/skuba/image_processing_workshop/yolo-coco/yolov4-tiny.weights")
 VIDEO = ("/home/skuba/image_processing_workshop/videos/airport.mp4")
 labels = open("/home/skuba/image_processing_workshop/yolo-coco/coco.names").read().strip().split("\n")
-################################################################################################
+############################################################################################################
 
 colors = np.random.uniform(0, 255, size=(len(labels), 3))
 #Loading Model
