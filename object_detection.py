@@ -2,6 +2,9 @@
 
 import cv2
 import numpy as np
+import os
+
+dirname = os.path.dirname(__file__)
 	
 def extract_boxes_confidences_classids(outputs, confidence, width, height):
     boxes = []
@@ -65,10 +68,10 @@ def draw_bounding_boxes(image, boxes, confidences, classIDs, idxs, colors):
 confidence = 0.6
 threshold = 0.3
 ############################################################################################################
-CFG = ("/home/skuba/image_processing_workshop/yolo-coco/yolov4-tiny.cfg")    
-WEIGHT = ("/home/skuba/image_processing_workshop/yolo-coco/yolov4-tiny.weights")
-VIDEO = ("/home/skuba/image_processing_workshop/videos/airport.mp4")
-labels = open("/home/skuba/image_processing_workshop/yolo-coco/coco.names").read().strip().split("\n")
+CFG = (dirname+"yolo-coco/yolov4-tiny.cfg")    
+WEIGHT = (dirname+"yolo-coco/yolov4-tiny.weights")
+VIDEO = (dirname+"videos/airport.mp4")
+labels = open(dirname+"yolo-coco/coco.names").read().strip().split("\n")
 ############################################################################################################
 
 colors = np.random.uniform(0, 255, size=(len(labels), 3))
