@@ -59,12 +59,12 @@ while True:
     cropped_image = region_of_interest(canny_image, np.array([region_of_interest_vertices], np.int32),)
     try:
         lines = cv2.HoughLinesP(cropped_image,
-                                rho=6,
+                                rho=1,
                                 theta=np.pi/180,
                                 threshold=60,
                                 lines=np.array([]),
-                                minLineLength=20,
-                                maxLineGap=80)
+                                minLineLength=5,
+                                maxLineGap=100)
         image_with_lines = draw_the_lines(image, lines)
     except:
         pass
