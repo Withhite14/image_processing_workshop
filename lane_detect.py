@@ -1,5 +1,8 @@
 import cv2
 import numpy as np
+import os
+
+dirname = os.path.dirname(__file__)
 
 def region_of_interest(img, vertices):
     x = int(img.shape[1])
@@ -36,7 +39,7 @@ def draw_the_lines(img, lines):
     img = cv2.addWeighted(img, 0.8, blank_image, 1, 0.0)
     return img
 
-cap  = cv2.VideoCapture('/home/skuba/image_processing_workshop/videos/lane_detect.mp4')
+cap  = cv2.VideoCapture(dirname + 'videos/lane_detect.mp4')
 
 while True:
     ret, frame = cap.read()
