@@ -45,13 +45,6 @@ while True:
     ret, frame = cap.read()
     image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     print(image.shape)
-    height = image.shape[0]
-    width = image.shape[1]
-    region_of_interest_vertices = [
-        (0.5, height),
-        (width/2, height/2),
-        (width, height)
-    ]
     
     masked = color_filter(image)
     gray_image = cv2.cvtColor(masked, cv2.COLOR_RGB2GRAY)
